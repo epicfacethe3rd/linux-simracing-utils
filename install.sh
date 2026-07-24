@@ -458,19 +458,19 @@ fix_desktop_launchers() {
 
   local has_run="0"
 
-  if ! run command -v update-desktop-database; then
+  if run command -v update-desktop-database; then
     run update-desktop-database ~/.local/share/applications 2>/dev/null
     has_run="1"
   fi
-  if ! run command -v kbuildsycoca6; then
+  if run command -v kbuildsycoca6; then
     run kbuildsycoca6 --noincremental 2>/dev/null
     has_run="1"
   fi
-  if ! run command -v kbuildsycoca5; then
+  if run command -v kbuildsycoca5; then
     run kbuildsycoca5 --noincremental 2>/dev/null
     has_run="1"
   fi
-  if ! run command -v xdg-desktop-menu; then
+  if run command -v xdg-desktop-menu; then
     run xdg-desktop-menu forceupdate 2>/dev/null
     has_run="1"
   fi
