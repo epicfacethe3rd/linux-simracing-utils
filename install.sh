@@ -162,7 +162,9 @@ check_dotnet() {
 
 check_corefonts() {
   echo -e "${CYAN}Updating prefix corefonts installation...${NC}"
+  set +e
   WINE=$SILENT_WINE run winetricks -q corefonts > "${LSU_LOGDIR}/corefonts_install.log" 2>&1
+  set -e
   echo -e "${GREEN}Installation of corefonts is up to date.${NC}"
 }
 
